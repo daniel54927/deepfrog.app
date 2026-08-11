@@ -17,15 +17,15 @@ const Skills = () => {
     },
     {
       name: "Infrastructure",
-      skills: ["VMware vSphere/ESXi", "Windows Server", "SQL Server", "Active Directory", "Networking", "Backup/Disaster Recovery"]
+      skills: ["Virtualization", "Linux (Ubuntu)", "Relational Databases", "Networking", "Backup/Disaster Recovery"]
     },
     {
       name: "Security Operations",
-      skills: ["SentinelOne (MDR)", "SIEM/Triage", "CIS Controls", "ITIL", "Vulnerability Management"]
+      skills: ["Managed Detection and Response", "SIEM/Triage", "CIS Controls", "ITIL", "Vulnerability Management"]
     },
     {
       name: "Systems Administration",
-      skills: ["Windows Server", "Linux (Ubuntu)", "Patching", "ITIL", "Technical Support", "Self-Service Portal"]
+      skills: ["Patch Management", "Identity and Access", "ITIL", "Technical Support", "Self-Service Portal"]
     },
     {
       name: "Network & Infrastructure",
@@ -33,8 +33,9 @@ const Skills = () => {
     },
     {
       name: "Virtualization & Management",
-      skills: ["VMware", "vCenter", "Endpoint Central", "Lifecycle Management", "Software Deployment"]
+      skills: ["Virtualization", "Lifecycle Management", "Software Deployment", "Change Control"]
     }
+
   ];
 
   
