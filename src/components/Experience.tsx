@@ -18,7 +18,7 @@ const Experience = () => {
     {
       id: 0,
       company: "American Place Casino",
-      position: "IT Systems Engineer",
+      position: "IT Systems Engineer (AI Automation and Agentic Systems)",
       location: "Waukegan, IL",
       period: "Dec 2025 - Present",
       highlights: [
@@ -32,9 +32,9 @@ const Experience = () => {
     {
       id: 1,
       company: "American Place Casino",
-      position: "IT Systems Administrator / Cybersecurity Specialist",
+      position: "IT Systems Administrator (Automation and AI Pilot)",
       location: "Waukegan, IL",
-      period: "2024 - 2025",
+      period: "Mar 2024 - Dec 2025",
       highlights: [
         "Prototyped the company's first local AI agent (LLMs, n8n, relational and vector databases) for compliance and risk reduction, the groundwork that became today's production automation.",
         "Launched a self service portal that cut software deployment time and reduced support tickets across 287 endpoints.",
