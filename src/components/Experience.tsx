@@ -22,11 +22,12 @@ const Experience = () => {
       location: "Waukegan, IL",
       period: "Dec 2025 - Present",
       highlights: [
-        "Designed and shipped a production voice AI agent from scratch that fields overnight IT helpdesk calls end to end: it verifies callers against Active Directory, triages emergencies from routine requests, escalates critical incidents to on-call staff, and auto-creates tickets for the rest, cutting non-emergency after-hours calls by roughly 90%.",
-        "Build and run n8n and LLM agent pipelines (ServiceDesk Plus to Motion orchestration) that standardize repeatable work across the property and remove manual handoffs.",
+        "Designed and shipped a production voice AI agent from scratch that fields after-hours support calls end to end: it authenticates the caller before acting, separates genuine emergencies from routine requests, escalates emergencies to a human responder, and opens a tracked ticket for everything else, cutting non-emergency after-hours call volume by roughly 90%.",
+        "Build and run LLM agent and workflow automation pipelines that standardize repeatable work across the business and remove manual handoffs.",
+        "Built and self-hosted an MCP server in Docker so AI agents can reach the system of record through an authenticated, auditable layer.",
         "Serve on the internal AI Taskforce, guiding where automation and LLM agents get applied across the business.",
-        "Lead a 56 plus server VMware ESXi estate, Windows and SQL Server, networking, and firewalls, with documented, rollback safe change control and tested disaster recovery.",
-        "Run security operations: migrated managed detection and response from Carbon Black to SentinelOne and triage 150 to 200 alerts per month against ITIL and CIS Controls."
+        "Lead virtualization, networking and database infrastructure with documented, rollback safe change control and tested disaster recovery.",
+        "Run security operations against ITIL and CIS Controls in a regulated 24/7 environment."
       ]
     },
     {
@@ -36,12 +37,14 @@ const Experience = () => {
       location: "Waukegan, IL",
       period: "Mar 2024 - Dec 2025",
       highlights: [
-        "Prototyped the company's first local AI agent (LLMs, n8n, relational and vector databases) for compliance and risk reduction, the groundwork that became today's production automation.",
-        "Launched a self service portal that cut software deployment time and reduced support tickets across 287 endpoints.",
-        "Monitored and responded to real time threats with SentinelOne MDR (migrated from Carbon Black), resolving 150 to 200 alerts monthly under defined incident response protocols.",
+        "Prototyped the company's first local AI agent (LLMs, workflow automation, relational and vector databases) for compliance and risk reduction, the groundwork that became today's production automation.",
+        "Automated a legally mandated compliance screening list between two systems that had no supported way to share data directly, verified by the compliance function.",
+        "Launched a self service portal that cut software deployment time and reduced support ticket volume.",
+        "Monitored and responded to real time threats under defined incident response protocols.",
         "Hardened and maintained secure infrastructure across hybrid systems, owning endpoint management and user security education."
       ]
     },
+
 
     {
       id: 2,
