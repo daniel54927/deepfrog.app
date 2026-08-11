@@ -3,6 +3,7 @@ import React from 'react';
 import ProjectDetails from './ProjectDetails';
 import ProjectFeatures from './ProjectFeatures';
 import AppPreviewFrame from './AppPreviewFrame';
+import ScreenshotPlaceholder, { ScreenshotSlot } from './ScreenshotPlaceholder';
 import { Mail, Bot, Mic, Phone, Activity, Network, LayoutDashboard, ExternalLink, Cpu, Server, Ticket, Database, Lock, Brain, BookOpen, LineChart } from 'lucide-react';
 import { SiReact, SiTypescript, SiPostgresql, SiDocker, SiPython, SiNextdotjs } from 'react-icons/si';
 import N8nIcon from '../icons/N8nIcon';
@@ -14,6 +15,7 @@ export interface PreviewPanel {
   node: React.ReactNode;
   caption: string;
 }
+
 
 interface ProjectCardProps {
   title: string;
