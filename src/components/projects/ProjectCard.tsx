@@ -161,7 +161,7 @@ const ProjectCard = ({
                   className="w-full h-auto object-cover"
                 />
               </div>
-            ) : (
+            ) : hasImages ? (
               <div
                 className="rounded-lg overflow-hidden mb-6 cursor-pointer transition-transform hover:scale-105 shadow-xl"
                 onClick={() => onImageClick?.(images![0].src, images![0].alt)}
@@ -172,7 +172,15 @@ const ProjectCard = ({
                   className="w-full h-auto object-cover"
                 />
               </div>
+            ) : null}
+            {hasScreenshots && (
+              <div className={`grid grid-cols-1 ${screenshots!.length > 1 ? 'sm:grid-cols-2' : ''} gap-4 ${hasPreviews || hasVideo || hasImages ? 'mt-6' : ''}`}>
+                {screenshots!.map((shot, i) => (
+                  <ScreenshotPlaceholder key={i} {...shot} onImageClick={onImageClick} />
+                ))}
+              </div>
             )}
+
             {externalUrl && !hasPreviews && (
               <a
                 href={externalUrl}
