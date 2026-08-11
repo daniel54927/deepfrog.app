@@ -33,7 +33,7 @@ const ScreenshotPlaceholder = ({ src, alt, label, onImageClick }: ScreenshotPlac
           <span className="text-[11px] text-gray-500">Screenshot slot</span>
         </div>
       )}
-      <figcaption className="text-xs text-gray-400 italic mt-2 px-1">{label}</figcaption>
+      {src && <figcaption className="text-xs text-gray-400 italic mt-2 px-1">{label}</figcaption>}
     </figure>
   );
 };
