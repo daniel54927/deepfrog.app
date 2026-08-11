@@ -3,6 +3,7 @@ import React from 'react';
 import ProjectDetails from './ProjectDetails';
 import ProjectFeatures from './ProjectFeatures';
 import AppPreviewFrame from './AppPreviewFrame';
+import ScreenshotPlaceholder, { ScreenshotSlot } from './ScreenshotPlaceholder';
 import { Mail, Bot, Mic, Phone, Activity, Network, LayoutDashboard, ExternalLink, Cpu, Server, Ticket, Database, Lock, Brain, BookOpen, LineChart } from 'lucide-react';
 import { SiReact, SiTypescript, SiPostgresql, SiDocker, SiPython, SiNextdotjs } from 'react-icons/si';
 import N8nIcon from '../icons/N8nIcon';
@@ -14,6 +15,7 @@ export interface PreviewPanel {
   node: React.ReactNode;
   caption: string;
 }
+
 
 interface ProjectCardProps {
   title: string;
@@ -42,8 +44,10 @@ interface ProjectCardProps {
   videoUrl?: string;
   posterUrl?: string;
   previewPanels?: PreviewPanel[];
+  screenshots?: ScreenshotSlot[];
   onImageClick?: (src: string, alt: string) => void;
 }
+
 
 const renderFeatureIcon = (icon: FeatureIcon) => {
   const cls = "h-5 w-5 text-tech-blue";
@@ -80,7 +84,9 @@ const ProjectCard = ({
   videoUrl,
   posterUrl,
   previewPanels,
+  screenshots,
   onImageClick,
+
 }: ProjectCardProps) => {
   const featureItems = features.map(feature => ({
     title: feature.title,
@@ -102,8 +108,9 @@ const ProjectCard = ({
     else if (t.includes('caddy')) icon = <Server className={iconCls} />;
     else if (t.includes('voice')) icon = <Mic className={iconCls} />;
     else if (t.includes('llm') || t.includes('gpt') || t.includes('claude')) icon = <Bot className={iconCls} />;
-    else if (t.includes('active directory')) icon = <Network className={iconCls} />;
-    else if (t.includes('servicedesk') || t.includes('service desk')) icon = <Ticket className={iconCls} />;
+    else if (t.includes('mcp') || t.includes('api')) icon = <Network className={iconCls} />;
+    else if (t.includes('pipeline') || t.includes('integration')) icon = <Ticket className={iconCls} />;
+
     else if (t.includes('vps')) icon = <Server className={iconCls} />;
     else if (t.includes('vector') || t.includes('database') || t.includes(' db') || t.endsWith('db')) icon = <Database className={iconCls} />;
     else if (t.includes('auth')) icon = <Lock className={iconCls} />;
@@ -116,7 +123,9 @@ const ProjectCard = ({
   const hasImages = images && images.length > 0;
   const hasVideo = !!videoUrl;
   const hasPreviews = !!previewPanels && previewPanels.length > 0;
-  const hasMedia = hasImages || hasVideo || hasPreviews;
+  const hasScreenshots = !!screenshots && screenshots.length > 0;
+  const hasMedia = hasImages || hasVideo || hasPreviews || hasScreenshots;
+
 
   return (
     <div className="bg-tech-dark/80 border border-tech-blue/20 rounded-xl overflow-hidden shadow-lg mb-24 animate-on-scroll opacity-0">
@@ -157,7 +166,7 @@ const ProjectCard = ({
                   className="w-full h-auto object-cover"
                 />
               </div>
-            ) : (
+            ) : hasImages ? (
               <div
                 className="rounded-lg overflow-hidden mb-6 cursor-pointer transition-transform hover:scale-105 shadow-xl"
                 onClick={() => onImageClick?.(images![0].src, images![0].alt)}
@@ -168,7 +177,15 @@ const ProjectCard = ({
                   className="w-full h-auto object-cover"
                 />
               </div>
+            ) : null}
+            {hasScreenshots && (
+              <div className={`grid grid-cols-1 ${screenshots!.length > 1 ? 'sm:grid-cols-2' : ''} gap-4 ${hasPreviews || hasVideo || hasImages ? 'mt-6' : ''}`}>
+                {screenshots!.map((shot, i) => (
+                  <ScreenshotPlaceholder key={i} {...shot} onImageClick={onImageClick} />
+                ))}
+              </div>
             )}
+
             {externalUrl && !hasPreviews && (
               <a
                 href={externalUrl}
