@@ -84,7 +84,9 @@ const ProjectCard = ({
   videoUrl,
   posterUrl,
   previewPanels,
+  screenshots,
   onImageClick,
+
 }: ProjectCardProps) => {
   const featureItems = features.map(feature => ({
     title: feature.title,
