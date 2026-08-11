@@ -122,7 +122,9 @@ const ProjectCard = ({
   const hasImages = images && images.length > 0;
   const hasVideo = !!videoUrl;
   const hasPreviews = !!previewPanels && previewPanels.length > 0;
-  const hasMedia = hasImages || hasVideo || hasPreviews;
+  const hasScreenshots = !!screenshots && screenshots.length > 0;
+  const hasMedia = hasImages || hasVideo || hasPreviews || hasScreenshots;
+
 
   return (
     <div className="bg-tech-dark/80 border border-tech-blue/20 rounded-xl overflow-hidden shadow-lg mb-24 animate-on-scroll opacity-0">
