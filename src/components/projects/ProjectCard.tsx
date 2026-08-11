@@ -44,8 +44,10 @@ interface ProjectCardProps {
   videoUrl?: string;
   posterUrl?: string;
   previewPanels?: PreviewPanel[];
+  screenshots?: ScreenshotSlot[];
   onImageClick?: (src: string, alt: string) => void;
 }
+
 
 const renderFeatureIcon = (icon: FeatureIcon) => {
   const cls = "h-5 w-5 text-tech-blue";
