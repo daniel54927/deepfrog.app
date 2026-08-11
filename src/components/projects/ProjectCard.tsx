@@ -108,8 +108,9 @@ const ProjectCard = ({
     else if (t.includes('caddy')) icon = <Server className={iconCls} />;
     else if (t.includes('voice')) icon = <Mic className={iconCls} />;
     else if (t.includes('llm') || t.includes('gpt') || t.includes('claude')) icon = <Bot className={iconCls} />;
-    else if (t.includes('active directory')) icon = <Network className={iconCls} />;
-    else if (t.includes('servicedesk') || t.includes('service desk')) icon = <Ticket className={iconCls} />;
+    else if (t.includes('mcp') || t.includes('api')) icon = <Network className={iconCls} />;
+    else if (t.includes('pipeline') || t.includes('integration')) icon = <Ticket className={iconCls} />;
+
     else if (t.includes('vps')) icon = <Server className={iconCls} />;
     else if (t.includes('vector') || t.includes('database') || t.includes(' db') || t.endsWith('db')) icon = <Database className={iconCls} />;
     else if (t.includes('auth')) icon = <Lock className={iconCls} />;
