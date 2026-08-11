@@ -13,7 +13,7 @@ import ScrollProgress from '../components/ScrollProgress';
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Daniel C. Brown - IT Systems Administrator & Cybersecurity Specialist";
+    document.title = "Daniel C. Brown - AI Platform and Automation Engineer";
   }, []);
 
   return (
